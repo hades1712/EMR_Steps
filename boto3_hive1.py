@@ -47,7 +47,7 @@ class RunEMRSteps:
 def parse_args():
     parser = argparse.ArgumentParser(description='Run Spark SQL on EMR.')
     parser.add_argument('-c', '--cluster_id', help='The cluster to run the SQL.', required=False)
-    parser.add_argument('-p', '--path_to_sql', help='The SQL to be executed', required=False,default='s3://ibu-bi-etl/script/fact_ibu_ppcorder_264996.sql')
+    parser.add_argument('-p', '--path_to_sql', help='The SQL to be executed', required=False,default='s3://sqlurl.sql')
     parser.add_argument('-r', '--region', help='The region of the cluster', required=False, default='ap-southeast-1')
     parser.add_argument('-i', '--init_file', help='The file to init variables', required=False, default=None)
     parser.add_argument('-k', '--aws_key', help='', required=False,default="xxxx5")
