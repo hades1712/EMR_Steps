@@ -50,8 +50,8 @@ def parse_args():
     parser.add_argument('-p', '--path_to_sql', help='The SQL to be executed', required=False,default='s3://ibu-bi-etl/script/fact_ibu_ppcorder_264996.sql')
     parser.add_argument('-r', '--region', help='The region of the cluster', required=False, default='ap-southeast-1')
     parser.add_argument('-i', '--init_file', help='The file to init variables', required=False, default=None)
-    parser.add_argument('-k', '--aws_key', help='', required=False,default="AKIASBTKBMEZISQU7M65")
-    parser.add_argument('-s', '--aws_secret', help='', required=False,default="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")
+    parser.add_argument('-k', '--aws_key', help='', required=False,default="xxxx5")
+    parser.add_argument('-s', '--aws_secret', help='', required=False,default="yyyy")
     args = vars(parser.parse_args())
     return args
 
