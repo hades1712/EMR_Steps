@@ -8,7 +8,7 @@ IDC客户上云也会伴随将IDC中的一些大数据的工作负载迁移到�
 考虑到对线下调度系统的兼容性，选择了EMR：EMR本身和线下Hadoop较为接近，客户上手更快；EMR可以通过多种方式直接提交Spark SQL，不需要经过转换或者封装；以及给客户提供了Spark，Hive，甚至Presto等更多的选择；同时还提供了对Spot Instance的支持，降低成本。
 ## 二、方案架构
 架构说明：我们将整个架构无缝集成入客户的调度系统中，包含了数据，代码，流程三部分。
-
+![avatar](https://github.com/hades1712/EMR_Steps/blob/main/migrating-spark-sql-tasks-to-amazon-emr1.png)
 所有的数据和代码都存放在S3上，流程存放在客户的调度系统里，所以EMR是一个无状态的计算服务，每日动态启动，完成当天的ETL工作之后，再终止掉该集群，最大化发挥云上的弹性优势；
 和客户的调度系统集成EMR的启动脚本，封装成Shell，并记录下集群id；附录1提供了EMR提交任务的几种方式供参考；
 通过客户调度系统，往该集群id提交Steps的方式提交Spark SQL脚本，并给调度系统返回Steps的执行日志；这里我们选择了更云原生的Steps提交方式；
